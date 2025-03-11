@@ -1,14 +1,18 @@
 import re
+from services.math_nlp import parse_math_expression
 
 def calculate(expression: str):
-    """Avalia expressões matemáticas básicas com segurança."""
+    """Usa IA para interpretar expressões matemáticas em linguagem natural e calcular o resultado."""
     try:
-        # Permitir apenas números e operadores básicos
-        if not re.match(r"^[0-9+\-*/(). ]+$", expression):
+        # Converter texto em expressão matemática
+        math_expression = parse_math_expression(expression)
+
+        # Validar expressão para evitar código malicioso
+        if not re.match(r"^[0-9+\-*/(). ]+$", math_expression):
             return "Expressão inválida!"
 
-        # Avalia a expressão de forma segura
-        result = eval(expression, {"__builtins__": {}})
+        # Calcular o resultado
+        result = eval(math_expression, {"__builtins__": {}})
         return result
     except Exception as e:
         return f"Erro ao calcular: {str(e)}"
