@@ -8,24 +8,22 @@ const response = ref("");
 const sendMessage = async () => {
   try {
     const res = await api.post("/chat", null, {
-  params: { input_text: userInput.value },
-  headers: { "Content-Type": "application/x-www-form-urlencoded" }
-});
-
-
+      params: { input_text: userInput.value },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+    });
     response.value = res.data.response;
   } catch (error) {
-    console.error("Erro ao enviar mensagem:", error);
+    console.error("Message error:", error);
   }
 };
 </script>
 
 <template>
   <div>
-    <h2>Chat com LLM</h2>
-    <input v-model="userInput" placeholder="Digite sua mensagem" />
-    <button @click="sendMessage">Enviar</button>
-    <p>Resposta: {{ response }}</p>
+    <h2>Just Chatting</h2>
+    <input v-model="userInput" placeholder="Type here..." @keyup.enter="sendMessage" />
+    <button @click="sendMessage">Send</button>
+    <p>Bot says: {{ response }}</p>
   </div>
 </template>
 

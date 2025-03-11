@@ -4,7 +4,7 @@ import ChatComponent from "./components/ChatComponent.vue";
 
 <template>
   <div>
-    <h1>Frontend Vue + Vite 🚀</h1>
+    <h1>Talk with me</h1>
     <ChatComponent />
   </div>
 </template>
