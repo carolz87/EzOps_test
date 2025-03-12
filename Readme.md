@@ -23,9 +23,9 @@ This is a FastAPI-based project that integrates an open-source LLM from Hugging 
 
 ### **1️⃣ Clone the repository**
 ```sh
- git clone https://github.com/carolz87/EzOps_test
+ git clone https://github.com/carolz87/FastAPI_LLM.git
 
- cd EzOps_test
+ cd FastAPI_LLM
  cd backend
 
 ```
@@ -64,9 +64,9 @@ The API will be available at: `http://127.0.0.1:8000`
 ### **1️⃣ Clone the repository**
 ___Note: If the clone already done, you don't have to do this again___
 ```sh
- git clone https://github.com/carolz87/EzOps_test
+ git clone https://github.com/carolz87/FastAPI_LLM.git
 
- cd EzOps_test
+  cd FastAPI_LLM
 ```
 Acess the Front-end folder
 ```sh
