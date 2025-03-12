@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import api from "../services/api";
 
+
 const userInput = ref("");
 const response = ref("");
 

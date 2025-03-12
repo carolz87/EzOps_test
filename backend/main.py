@@ -8,7 +8,7 @@ from services.intent_model import detect_intent
 app = FastAPI()
 
 # Hugging Face model import
-llm = pipeline("text-generation", model="gpt2")
+llm = pipeline("text2text-generation", model="google/flan-t5-small")
 
 # CORS middleware configuration
 app.add_middleware(
@@ -22,7 +22,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
-    return {"message": "API ready!"}
+    return {"message": "API Ready!"}
 
 @app.post("/chat")
 def chat(input_text: str):
